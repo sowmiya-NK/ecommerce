@@ -1,0 +1,30 @@
+<section style="background-color: #eee">
+  <div class="container py-5" style="height: 300px; width: 70%">
+    <div class="row text-center p-3">
+      <div
+        class="col-md-12 col-lg-4 mb-4 mb-lg-0"
+        *ngFor="let product of products"
+      >
+        <div class="card">
+          <div class="d-flex justify-content-between p-3"></div>
+          <img
+            src="{{ product.image }}"
+            class="card-img-top"
+            style="height: 300px; width: 250px; padding-left: 20px"
+          />
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <p>
+                {{ product.title }}
+              </p>
+            </div>
+            <p class="small text-danger">
+              {{ product.price }}
+            </p>
+            <div><button class="btn btn-primary" (click)="addToCart(product.id)">Add to cart</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
